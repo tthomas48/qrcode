@@ -9,6 +9,7 @@ gem 'rails', '3.0.1'
 gem 'mysql'
 
 gem 'haml'
+gem 'twitter-bootstrap-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'

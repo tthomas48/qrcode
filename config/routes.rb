@@ -1,4 +1,8 @@
 Qrcode::Application.routes.draw do
+  get "pages/home"
+
+  get "pages/adhoc"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
