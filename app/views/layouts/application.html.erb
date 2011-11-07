@@ -7,11 +7,67 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+<body>
 
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="#">Mobile Menu</a>
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+                <% if user_signed_in? %>
+                  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+                <% else %>
+                  <%= link_to('Login', new_user_session_path)  %>  
+                <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-<%= yield %>
+    <div class="container">
 
+      <% if notice %>
+        <div class="row notice" data-alert="alert">
+          <p class="span16">
+            <div class="alert-message block-message warning">
+              <a class="close" href="#">×</a>
+              <%= notice %>
+            </div>
+          </p>
+        </div>
+        <script type="text/javascript">
+          $(function() {
+            $('.notice').alert();
+          });
+        </script>
+      <% end %>
+      <% if alert %>
+      <div class="row alert" data-alert="alert">
+        <p class="span16">
+          <div class="alert-message block-message error">
+            <a class="close" href="#">×</a>
+            <%= alert %>
+          </div>
+        </p>
+      </div>
+        <script type="text/javascript">
+          $(function() {
+            $('.alert').alert();
+          });
+        </script>
+      <% end %>
+
+      <%= yield %>
+
+      <footer>
+        <p>Created by New Work Austin with funding from the Mellon Foundation</p>
+      </footer>
+
+    </div>
 </body>
 </html>
