@@ -1,5 +1,4 @@
 Qrcode::Application.routes.draw do
-  scope 'qrcode' do
     get "splash/splash"
 
     devise_for :users
@@ -9,5 +8,4 @@ Qrcode::Application.routes.draw do
     get "pages/home"
 
     get "pages/adhoc"
-  end
 end
