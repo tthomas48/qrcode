@@ -1,0 +1,33 @@
+<section id="forgot-password">
+<div class="page-header">
+<h1>Forgot your password?</h1>
+</div>
+<div class="row">
+<div class="span4">
+<p>
+Enter your email and we'll send you a temporary password
+to get you back in.
+</p>
+
+
+<%= render :partial => "devise/shared/links" %>
+
+</div>
+<div class="span12">
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= devise_error_messages! %>
+  <fieldset>
+  <div class="clearfix">
+    <%= f.label :email %>
+    <div class="input">
+      <%= f.email_field :email, :class => "span3" %>
+    </div>
+  </div>
+
+  <div class="actions"><%= f.submit "Send me reset password instructions", :class => "btn primary" %></div>
+  </fieldset>
+<% end %>
+
+</div>
+</div>
+</section>
