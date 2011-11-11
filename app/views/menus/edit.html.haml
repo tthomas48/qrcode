@@ -1,0 +1,10 @@
+%section{:id => "forgot-password"}
+  %div{:class => "page-header"}
+    %h1 Editing Menu
+  %div{:class => "row"}
+    %div{:class => "span4"}
+      %p Give your menu a label. A good idea is the name of the show. Like 'Flippant Fuzz'. 
+      %p The image link is for your company logo. Or the show logo. Something to put at the top of the menu to identify the menu to your audience.
+      =link_to('Back', menus_path)
+    %div{:class => "span12"}
+      =render('form')

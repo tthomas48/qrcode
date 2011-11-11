@@ -1,0 +1,24 @@
+!!!html
+%html
+  %head
+    %title Mobile Menu
+    %meta{:name=>"viewport",:content=>"width=device-width, initial-scale=1"}
+    =stylesheet_link_tag 'jquery.mobile.min.css'
+    =stylesheet_link_tag 'mobile.css'
+    =javascript_include_tag 'application'
+    =javascript_include_tag 'jquery.mobile.min.js'
+    =csrf_meta_tag
+  %body
+    %div{'data-role'=>'page'}
+      %div{'data-role'=>'header'}
+        %h1 
+          =@title
+      %div{'data-role'=>'content'}
+        =yield
+      %div{'data-role'=>'footer'}
+        %h4 
+          Created by 
+          %a{:href=>'http://www.newworkaustin.com/',:rel=>'external'}
+            New Work Austin 
+          with funding from the Mellon Foundation
+

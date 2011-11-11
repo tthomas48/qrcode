@@ -3,4 +3,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require_tree .
+//= require jquery.nested-fields
+//= require qrcode
+//= require splash

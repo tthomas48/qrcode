@@ -1,0 +1,9 @@
+.logo{:class=>'ui-helper-clearfix'}
+  %img{:src=>@menu.image}
+%ul{'data-role'=>'listview'}
+  - @menu.menu_items.each do |item|
+    %li
+      %a{:rel=>'external',:href=>item.url}
+        %img{:src=>item.image}
+        %span
+          =item.label

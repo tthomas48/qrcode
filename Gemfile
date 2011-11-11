@@ -13,6 +13,7 @@ gem 'twitter-bootstrap-rails'
 gem 'less-rails-bootstrap'
 gem 'jquery-rails'
 gem 'devise'
+gem 'awesome_nested_fields'
 #gem 'actionpack', '~> 3.1.0'
 
 # Use unicorn as the web server

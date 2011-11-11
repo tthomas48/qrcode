@@ -1,0 +1,27 @@
+%section{:id => "forgot-password"}
+  %div{:class => "page-header"}
+    %h1 Menus
+  %div{:class => "row"}
+    %div{:class => "span4"}
+      %p Here you can edit or view any existing menu.
+      %p To create a new menu click the 'New Menu' link below.
+      = link_to 'New Menu', new_menu_path
+    %div{:class => "span12"}
+      %table{:class => "zebra-striped"}
+        %tr
+          %th Label
+          %th Image
+          %th Actions
+        - @menus.each do |menu|
+          %tr
+            %td 
+              = link_to menu.label, edit_menu_path(menu)
+            %td 
+              %img{:src => menu.image}
+            %td 
+              = link_to 'View', menu, :target => '_new'
+              = link_to 'Edit', edit_menu_path(menu)
+              = link_to 'Delete', menu, confirm: 'Are you sure?', method: :delete
+        - if @menus.length == 0
+          %tr
+            %th{:colspan => 3} No menus found.
