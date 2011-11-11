@@ -50,6 +50,7 @@ class MenusController < ApplicationController
     @menu = Menu.new(params[:menu])
 
     respond_to do |format|
+      @menu.bitly_url = menu_url(@menu)
       if @menu.save
         format.html { redirect_to edit_menu_path(@menu), notice: 'Menu was successfully created.' }
         format.json { render json: @menu, status: :created, location: @menu }
@@ -66,6 +67,7 @@ class MenusController < ApplicationController
     @menu = Menu.find(params[:id])
 
     respond_to do |format|
+      @menu.bitly_url = menu_url(@menu)
       if @menu.update_attributes(params[:menu])
         format.html { redirect_to menus_url, notice: 'Menu was successfully updated.' }
         format.json { head :ok }
