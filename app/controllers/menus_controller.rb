@@ -50,7 +50,7 @@ class MenusController < ApplicationController
     @menu = Menu.new(params[:menu])
 
     respond_to do |format|
-      @menu.bitly_url = menu_url(@menu)
+      @menu.bitly_url = shorten(menu_url(@menu))
       if @menu.save
         format.html { redirect_to edit_menu_path(@menu), notice: 'Menu was successfully created.' }
         format.json { render json: @menu, status: :created, location: @menu }
@@ -67,7 +67,7 @@ class MenusController < ApplicationController
     @menu = Menu.find(params[:id])
 
     respond_to do |format|
-      @menu.bitly_url = menu_url(@menu)
+      @menu.bitly_url = shorten(menu_url(@menu))
       if @menu.update_attributes(params[:menu])
         format.html { redirect_to menus_url, notice: 'Menu was successfully updated.' }
         format.json { head :ok }
@@ -87,6 +87,17 @@ class MenusController < ApplicationController
     respond_to do |format|
       format.html { redirect_to menus_url }
       format.json { head :ok }
+    end
+  end
+
+  def shorten(url)
+    Bitly.use_api_version_3
+    b = Bitly.new(Qrcode::Application.config.bitly_username, Qrcode::Application.config.bitly_api_key)
+    begin
+      output = b.shorten(url)
+      return output.short_url
+    rescue
+      return url
     end
   end
 end

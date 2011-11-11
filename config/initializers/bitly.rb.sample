@@ -1,0 +1,2 @@
+Qrcode::Application.config.bitly_username = ""
+Qrcode::Application.config.bitly_api_key = ""

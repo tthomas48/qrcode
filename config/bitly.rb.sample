@@ -1,4 +1,0 @@
-Configuration.for('bitly') {
-  username ''
-  api_key ''
-}

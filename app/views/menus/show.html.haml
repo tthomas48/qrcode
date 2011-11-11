@@ -3,7 +3,7 @@
 %ul{'data-role'=>'listview'}
   - @menu.menu_items.each do |item|
     %li
-      %a{:rel=>'external',:href=>item.url}
+      %a{:rel=>'external',:href=>item.bitly_url}
         %img{:src=>item.image}
         %span
           =item.label

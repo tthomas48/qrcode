@@ -40,5 +40,8 @@ module Qrcode
     config.filter_parameters += [:password]
 
     config.assets.enabled = true
+  config.bitly_username = 'foo'
+  config.bitly_api_key = 'bar'
+
   end
 end
