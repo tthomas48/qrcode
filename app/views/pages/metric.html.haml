@@ -1,0 +1,26 @@
+%section{:id => "metrics"}
+  %div{:class => "page-header"}
+    %h1 Enter Metrics
+  %div{:class => "row"}
+    %div{:class => "span4"}
+      %p By entering metrics you allow us to compute the success of your mobile menu. 
+      %p For each performance date enter the number of donations and the total number of patrons.
+    %div{:class => "span12"}
+      %form
+        %fieldset
+          %legend Metric
+          %div{:class=>'clearfix'}
+            %label Date
+            %div{:class=>'input'}
+              %input{:type=>'date'}
+          %div{:class=>'clearfix'}
+            %label Donations
+            %div{:class=>'input'}
+              %input{:type=>'number'}
+          %div{:class=>'clearfix'}
+            %label Total
+            %div{:class=>'input'}
+              %input{:type=>'number'}
+          %a{:href=>"#"} Add Date
+          .actions
+            %button{:class=>'btn primary'} Save Metrics

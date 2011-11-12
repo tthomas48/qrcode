@@ -9,4 +9,10 @@ class PagesController < ApplicationController
   def adhoc
   end
 
+  def report
+  end
+
+  def metric
+  end
+
 end

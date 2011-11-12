@@ -10,4 +10,8 @@ Qrcode::Application.routes.draw do
     get "pages/home"
 
     get "pages/adhoc"
+
+    get "pages/report"
+  
+    get "pages/metric"
 end
