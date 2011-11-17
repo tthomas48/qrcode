@@ -4,6 +4,7 @@ Qrcode::Application.routes.draw do
 
     devise_for :users
 
+    match "/menus/:id", :controller => 'splash', :action => 'show'
     match "/menus/:id/edit_metric", :controller => 'menus', :action => 'edit_metric'
     match "/menus/:id/report", :controller => 'menus', :action => 'report'
     resources :menus

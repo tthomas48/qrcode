@@ -1,7 +1,6 @@
 class MenusController < ApplicationController
   # TODO: don't auth user on menu show
   before_filter :authenticate_user!, :mailer_set_url_options
-  layout Proc.new { |controller| action_name == 'show' ? 'mobile' : 'application' }
 
   # GET /menus
   # GET /menus.json

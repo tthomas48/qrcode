@@ -10,6 +10,7 @@
     =csrf_meta_tag
   %body
     %div{'data-role'=>'page'}
+      %a{:href=>'#survey-dialog', 'data-rel'=>'dialog', 'data-transition'=>'pop', :id=>'dialog-link'}
       %div{'data-role'=>'header'}
         %h1 
           =@title
@@ -21,4 +22,16 @@
           %a{:href=>'http://www.newworkaustin.com/',:rel=>'external'}
             New Work Austin 
           with funding from the Mellon Foundation
+    %div{ 'data-role'=>'survey-dialog', 'role'=>'dialog', :id => 'survey-dialog'}
+      %div{'data-role'=>'header'}
+        %h1
+          Help Us Out?
+      %div{'data-role'=>'content'}
+        %p Would you mind taking a short survey? It'll take you just one minute. We promise.
+        %a{'data-role'=>'button',:href=>Qrcode::Application.config.survey_url} Ok, I'm Game
+        %button{:onclick=>"$('#survey-dialog').dialog('close')"} No Thanks, I'll Pass
+    - if session[:showed_survey] != true
+      %script
+        $(function() { $('#dialog-link').click()});
+      - session[:showed_survey] = true
 
