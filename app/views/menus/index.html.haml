@@ -20,8 +20,16 @@
               %img{:src => menu.image}
             %td 
               = link_to 'View', menu, :target => '_new'
+              |
               = link_to 'Edit', edit_menu_path(menu)
+              |
               = link_to 'Delete', menu, confirm: 'Are you sure?', method: :delete
+              %br
+              = link_to 'Metrics', :controller => 'menus', :action => 'edit_metric', :id => menu.id
+              |
+              = link_to 'Report', :controller => 'menus', :action => 'report', :id => menu.id
+              %br
+              = link_to 'Download QR Code', menu.bitly_url + '.qrcode', :target => '_new'
         - if @menus.length == 0
           %tr
             %th{:colspan => 3} No menus found.

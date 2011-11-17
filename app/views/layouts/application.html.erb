@@ -14,9 +14,6 @@
           <%= link_to('Mobile Menu', menus_path, :class => 'brand') %>
           <ul class="nav">
             <li <%= action_name == 'index' ? "class='active'" : ''%>><%= link_to('Menus', menus_path)%></li>
-            <li <%= action_name == 'metric' ? "class='active'" : ''%>><%= link_to('Metrics', pages_metric_path)%></li>
-            <li <%= action_name == 'report' ? "class='active'" : ''%>><%= link_to('Reports', pages_report_path)%></li>
-            <!--li><a href="#contact">Contact</a></li-->
             <li>
                 <% if user_signed_in? %>
                   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        

@@ -1,5 +1,6 @@
 class MenuItem < ActiveRecord::Base
   validates :label, :presence => true
+  validates :url, :presence => true
   belongs_to :menu, :foreign_key => "menu_id"
   before_save :shorten_url
   

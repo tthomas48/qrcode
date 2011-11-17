@@ -14,4 +14,21 @@ div.alert-message li {
   color: white;
   list-style-type: none;
 }
+span.uneditable-input {
+  width: 150px;
+  float: left;
+}
+input.inline {
+  float: left;
+  margin-left: 15px;
+}
+#menu_items a.remove {
+  margin: 0 0 0 270px;
+}
+#metrics a.remove {
+  margin: 0 0 0 380px;
+}
 
+.item {
+  padding-top: 18px;
+}

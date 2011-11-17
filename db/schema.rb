@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111111195340) do
+ActiveRecord::Schema.define(:version => 20111114154834) do
 
   create_table "menu_items", :force => true do |t|
     t.string   "label"
@@ -33,6 +33,25 @@ ActiveRecord::Schema.define(:version => 20111111195340) do
     t.integer  "user_id"
     t.string   "bitly_url"
   end
+
+  create_table "metric_dates", :force => true do |t|
+    t.datetime "showdate"
+    t.integer  "menu_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "metric_dates", ["menu_id"], :name => "index_metric_dates_on_menu_id"
+
+  create_table "metrics", :force => true do |t|
+    t.integer  "metric_date_id"
+    t.string   "metric"
+    t.integer  "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "metrics", ["metric_date_id"], :name => "index_metrics_on_metric_date_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

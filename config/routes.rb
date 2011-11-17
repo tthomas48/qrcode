@@ -1,17 +1,12 @@
 Qrcode::Application.routes.draw do
+
     get "splash/splash"
 
     devise_for :users
+
+    match "/menus/:id/edit_metric", :controller => 'menus', :action => 'edit_metric'
+    match "/menus/:id/report", :controller => 'menus', :action => 'report'
     resources :menus
-    resources :menu_items
 
     root :to => "splash#splash"
-
-    get "pages/home"
-
-    get "pages/adhoc"
-
-    get "pages/report"
-  
-    get "pages/metric"
 end

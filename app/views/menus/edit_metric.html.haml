@@ -1,0 +1,10 @@
+%section{:id => "edit-menus"}
+  %div{:class => "page-header"}
+    %h1 Edit Menu Metrics
+  %div{:class => "row"}
+    %div{:class => "span4"}
+      %p Metrics allow us to capture the performance of your menu.
+      %p For each show date enter values for each metric.
+      =link_to('Back', menus_path)
+    %div{:class => "span12"}
+      =render('metric_form')

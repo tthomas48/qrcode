@@ -1,0 +1,64 @@
+= form_for @menu do |f| 
+  - if @menu.errors.any?
+    #error_explanation
+      %h2 
+        = pluralize(@menu.errors.count, "error")
+        prohibited this menu from being saved:
+      %ul
+        - @menu.errors.full_messages.each do |msg|
+          %li
+            = msg
+  %fieldset
+    %legend
+      = @menu.label
+    #metrics
+      %fieldset
+        %legend Metrics
+        .container
+          = f.nested_fields_for :metric_dates, :render_template => false do |m_form|
+            .item
+              .clearfix
+                = m_form.label :showdate
+                .input
+                  = m_form.text_field :showdate, :class => "span3"
+              = m_form.nested_fields_for :metrics, :render_template => false do |m|
+                .clearfix
+                  = m.label :metric, "Quantity"
+                  .input
+                    %span{:class=>'uneditable-input span3'}
+                      = m.object.metric
+                    = m.hidden_field :metric, :class => 'metric-hidden'
+                    = m.text_field :quantity, :class => "span2 inline", :type => "number"
+              %a{:href=>"#",:class=>"remove btn danger small"} remove
+              = m_form.hidden_field :id
+              = m_form.hidden_field :_destroy
+        = nested_fields_templates
+      %a{:href=>"#", :class=>"add btn success small"}add show date
+    .actions
+      = f.submit :class => "btn primary"
+    %script
+      =raw @metric_types 
+:javascript
+  $(document).ready(function(e) {
+    $('FORM').nestedFields({
+      itemTemplateSelector: '.item.template.metric_date',
+      beforeInsert: function(item) {
+        var id = item.attr('data-record-id');
+
+        var div = item.find('div.clearfix');
+
+       for(i = 0; i < metric_types.length; i++) {
+          var e = document.createElement('div');
+          e.innerHTML = $('.item.metric.template').html().replace(/metric_dates_attributes_new_nested_item/g, 'metric_dates_attributes_' + id).replace(/menu\[metric_dates_attributes\]\[new_nested_item\]/g, 'menu[metric_dates_attributes][' + id + ']').replace(/metrics_attributes_new_nested_item/g, 'metrics_attributes_' + i).replace(/\[metrics_attributes\]\[new_nested_item\]/g, '[metrics_attributes][' + i + ']');
+          var mt = $(e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue);
+          mt.find('.uneditable-input').html(metric_types[i]);
+          mt.find('.metric-hidden').val(metric_types[i]);
+
+          mt.appendTo(div);
+        }
+        window.console.log(item);
+
+      },
+    });
+  });
+

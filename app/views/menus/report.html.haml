@@ -1,0 +1,35 @@
+%section{:id => "metrics"}
+  %div{:class => "page-header"}
+    %h1 Reports
+  %div{:class => "row"}
+    %div{:class => "span4"}
+      %p Reports take data from link clicks and metrics and combines them to provide a comprehensive view of the success of your Mobile Menu.
+      %p You can view more detailed reports from bit.ly by clicking on the stats links in the bottom left.
+      =link_to('Back', menus_path)
+    .span12 
+      .row
+        .span6
+          %fieldset
+            %legend Total Clickers
+            %img{:src => Gchart.pie(:data => @total_clickers_data, :legend => ['Clickers', 'Non-Clickers'])}
+        .span6
+          %fieldset
+            %legend Total Donors
+            %img{:src => Gchart.pie(:data => @total_donors_data, :legend => ['Donors', 'Non-Donors'])}
+      .row
+        .span6
+          %fieldset
+            %legend Donors by Date
+            %img{:src => Gchart.bar(:data => @donors_by_date, :axis_with_labels => 'x', :axis_labels => @donors_by_date_dates, :stacked => false, :legend => ['Donors', 'Non-Donors'],:bar_colors => 'FF0000,00FF00', :custom => 'xAxis.showTextEvery=2')}
+        .span6
+          %fieldset
+            %legend Bitly Stats
+            %ul
+              %li
+                %a{:target=>'_new', :href=>@menu.bitly_url + '+'} 
+                  = @menu.label
+                %ul
+                  - @menu.menu_items.each do |menu_item|
+                    %li
+                      %a{:target=>'_new', :href=>menu_item.bitly_url + '+'}
+                        = menu_item.label

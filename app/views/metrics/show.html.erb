@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Showdate:</b>
+  <%= @metric.showdate %>
+</p>
+
+<p>
+  <b>Menu:</b>
+  <%= @metric.menu %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @metric.quantity %>
+</p>
+
+<p>
+  <b>Metric:</b>
+  <%= @metric.metric %>
+</p>
+
+
+<%= link_to 'Edit', edit_metric_path(@metric) %> |
+<%= link_to 'Back', metrics_path %>
