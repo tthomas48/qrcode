@@ -5,3 +5,5 @@ to test the viability of using QR Codes in theatres to increase audience
 engagement.
 
 [*New Work Austin*]{http://www.newworkaustin.com}
+
+Created by Tim Thomas <tim@buyplaytix.com>

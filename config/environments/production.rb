@@ -47,5 +47,14 @@ Qrcode::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.action_mailer.default_url_options = { :host => 'mail.buyplaytix.com:25' }
+  ActionMailer::Base.smtp_settings = {
+    :host => 'localhost',
+    :port => '587',
+    :enable_starttls_auto => false,
+    :openssl_verify_mode => 'none',
+  }
+  config.action_mailer.default_url_options = {
+    :script_name => "/qrcode"
+  }
+
 end
