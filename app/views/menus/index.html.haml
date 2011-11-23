@@ -19,7 +19,7 @@
             %td 
               %img{:src => menu.image}
             %td 
-              = link_to 'View', menu, :target => '_new'
+              = link_to 'View', view_menu_path(menu), :target => '_new'
               |
               = link_to 'Edit', edit_menu_path(menu)
               |

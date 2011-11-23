@@ -6,7 +6,7 @@ gem 'rails', '3.1.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 #gem 'sqlite3-ruby', :require => 'sqlite3'
-gem 'mysql'
+gem 'mysql2'
 
 gem 'haml'
 gem 'twitter-bootstrap-rails'
