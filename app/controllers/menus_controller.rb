@@ -69,7 +69,7 @@ class MenusController < ApplicationController
     @menu = Menu.find(params[:id])
 
     respond_to do |format|
-      @menu.bitly_url = shorten(menu_url(@menu))
+      @menu.bitly_url = shorten(view_menu_url(:id=>@menu.id))
       if @menu.update_attributes(params[:menu])
         format.html { redirect_to menus_url, notice: 'Menu was successfully updated.' }
         format.json { head :ok }
