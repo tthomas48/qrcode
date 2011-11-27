@@ -50,7 +50,7 @@ class MenusController < ApplicationController
 
     respond_to do |format|
       if @menu.save
-        @menu.bitly_url = shorten(menu_url(:id=>@menu.id))
+        @menu.bitly_url = shorten(view_menu_url(:id=>@menu.id))
         @menu.save
 
         format.html { redirect_to edit_menu_path(@menu), notice: 'Menu was successfully created.' }
