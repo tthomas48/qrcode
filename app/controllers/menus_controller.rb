@@ -128,6 +128,8 @@ class MenusController < ApplicationController
     @totals = {}
     @donors_by_date_dates = []
     @donors_by_date = []
+    @totals['Donations'] = 0
+    @totals['Total Audience'] = 0
     @menu.metric_dates.each do |metric_date|
 
       @donors_by_date_dates.push(metric_date.showdate.strftime('%b %-d'))
