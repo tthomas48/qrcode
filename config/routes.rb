@@ -7,6 +7,7 @@ Qrcode::Application.routes.draw do
     match "/menus/:id/edit_metric", :controller => 'menus', :action => 'edit_metric'
     match "/menus/:id/report", :controller => 'menus', :action => 'report'
     match "/menus/view/:id", :controller => 'splash', :action => 'show', :as => 'view_menu'
+    match "/menus/help/:id", :controller => 'splash', :action => 'help', :as => 'help_menu'
     resources :menus
 
     root :to => "splash#splash"

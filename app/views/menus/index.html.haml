@@ -30,6 +30,9 @@
               = link_to 'Report', :controller => 'menus', :action => 'report', :id => menu.id
               %br
               = link_to 'Download QR Code', menu.bitly_url + '.qrcode', :target => '_new'
+              %br
+              = link_to 'Print instructions', help_menu_path(menu) + '.svg', :target => '_new'
+
         - if @menus.length == 0
           %tr
             %th{:colspan => 3} No menus found.
