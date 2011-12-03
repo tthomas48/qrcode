@@ -5,7 +5,7 @@ class MenusController < ApplicationController
   # GET /menus
   # GET /menus.json
   def index
-    @menus = Menu.all
+    @menus = current_user().menus
 
     respond_to do |format|
       format.html # index.html.erb
