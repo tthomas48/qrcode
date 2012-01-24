@@ -1,0 +1,56 @@
+<script type="text/javascript">
+function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+  var last_click;
+  var clicks = readCookie("clicks");
+  if(!clicks) {
+    clicks = 0;
+  }
+
+  $(function() {
+    $('a').each(function(link) {
+      if($(this).attr('rel') != 'external') {
+        return true;
+      }
+      var llink = $(this);
+      var href = llink.attr('href');
+      llink.attr('href', '#');
+      llink.attr('link', href);
+    });
+    $('a').click(function(event) {
+      if($(this).attr('rel') != 'external') {
+        return true;
+      }
+
+      event.stopPropagation();
+
+      createCookie("clicks", ++clicks, 1);
+      if(clicks > 1) {
+        last_click = $(this).attr('link');
+        $('#dialog-link').click();
+        return false;
+      }
+      document.location.href = $(this).attr('link');
+      return false;
+    });
+  });
+
+</script>

@@ -30,9 +30,5 @@
       %div{'data-role'=>'content'}
         %p Would you mind taking a short survey? It'll take you just one minute. We promise.
         %a{'data-role'=>'button',:href=>Qrcode::Application.config.survey_url} Ok, I'm Game
-        %button{:onclick=>"$('#survey-dialog').dialog('close')"} No Thanks, I'll Pass
-    - if session[:showed_survey] != true
-      %script
-        $(function() { $('#dialog-link').click()});
-      - session[:showed_survey] = true
-
+        %button{:onclick=>"$('#survey-dialog').dialog('close'); document.location.href = last_click;"} Not right this second
+    =render('survey_js')
