@@ -17,7 +17,7 @@ gem 'haml'
 #gem 'uglifier'
 # end stuff commented out in production
 
-gem 'jquery-rails'
+gem 'jquery-rails', "~>1.0.19"
 gem 'devise'
 gem 'awesome_nested_fields'
 gem 'bitly'
