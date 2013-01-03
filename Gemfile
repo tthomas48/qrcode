@@ -1,5 +1,4 @@
 source 'http://rubygems.org'
-
 gem 'rails', '3.1.0'
 
 # Bundle edge Rails instead:
@@ -8,15 +7,23 @@ gem 'rails', '3.1.0'
 #gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'mysql2'
 
+#gem 'libv8', '~> 3.11.8.3', :platform => :ruby
 gem 'haml'
+# Stuff commented out in production
+gem 'therubyracer', :platforms => :ruby
 gem 'twitter-bootstrap-rails'
+gem 'less'
 gem 'less-rails-bootstrap'
+gem 'uglifier'
+# end stuff commented out in production
+
 gem 'jquery-rails'
 gem 'devise'
 gem 'awesome_nested_fields'
 gem 'bitly'
 gem 'googlecharts'
 gem 'fastimage'
+gem 'thin'
 #gem 'actionpack', '~> 3.1.0'
 
 # Use unicorn as the web server
@@ -42,6 +49,6 @@ group :development do
 end
 group :test do
   gem 'rspec'
-  gem 'webrat'
+#  gem 'webrat'
 #  gem 'spork'
 end

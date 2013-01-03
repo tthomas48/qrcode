@@ -1,0 +1,17 @@
+--- 
+applications: 
+  .: 
+    name: qrcode
+    framework: 
+      name: rails3
+      info: 
+        mem: 256M
+        description: Rails Application
+        exec: 
+    infra: rs
+    url: ${name}.${target-base}
+    mem: 128M
+    instances: 1
+    services: 
+      qrcode-mysql-92916: 
+        type: mysql

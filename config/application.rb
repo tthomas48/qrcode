@@ -42,6 +42,6 @@ module Qrcode
     config.assets.enabled = true
   config.bitly_username = 'foo'
   config.bitly_api_key = 'bar'
-
+  config.assets.precompile += ['mobile.css']
   end
 end

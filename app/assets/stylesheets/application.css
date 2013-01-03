@@ -2,6 +2,7 @@
  *= require_self
  *= require jquery-ui.custom.css
  *= require twitter/bootstrap
+ *= require devise
  *= require qrcode
  *= require splash
  */

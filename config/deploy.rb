@@ -17,6 +17,11 @@ set :use_sudo, false
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
 
+require "bundler/capistrano"
+before "deploy:assets:precompile", "bundle:install"
+load 'deploy/assets'
+
+
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
   task :start do

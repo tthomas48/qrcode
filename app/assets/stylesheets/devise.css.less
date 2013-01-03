@@ -1,0 +1,121 @@
+// Import variables and mixins
+@import "twitter/bootstrap/mixins";
+@import "twitter/bootstrap/reset.less";
+@import "twitter/bootstrap/variables.less";
+@import "twitter/bootstrap/mixins.less";
+@import "twitter/bootstrap/scaffolding.less";
+@import "twitter/bootstrap/grid.less";
+@import "twitter/bootstrap/layouts.less";
+@import "twitter/bootstrap/type.less";
+@import "twitter/bootstrap/forms.less";
+@import "twitter/bootstrap/wells.less";
+@import "twitter/bootstrap/component-animations.less";
+@import "twitter/bootstrap/buttons.less";
+@import "twitter/bootstrap/close.less";
+@import "twitter/bootstrap/navs.less";
+@import "twitter/bootstrap/navbar.less";
+@import "twitter/bootstrap/labels-badges.less";
+@import "twitter/bootstrap/hero-unit.less";
+@import "twitter/bootstrap/utilities.less";
+@import "twitter/bootstrap/alerts.less";
+@import "twitter/bootstrap/responsive";
+
+form {
+	/* This is all copy/pasted. I can't get element-based rulesets to work */
+	input[type=email] {
+		display: inline-block;
+	    width: 210px;
+	    margin: 0;
+	    padding: 4px;
+	    font-size: 13px;
+	    line-height: @baseLineHeight;
+	    height: @baseLineHeight;
+	    color: @gray;
+	    border: 1px solid #ccc;
+	    .border-radius(3px);
+	}
+	
+	// Focus states
+	input[type=email] {
+		@transition: border linear .2s, box-shadow linear .2s;
+		.transition(@transition);
+		.box-shadow(inset 0 1px 3px rgba(0,0,0,.1));
+	}
+	input[type=email]:focus {
+		outline: none;
+		border-color: rgba(82,168,236,.8);
+		@shadow: inset 0 1px 3px rgba(0,0,0,.1), 0 0 8px rgba(82,168,236,.6);
+		.box-shadow(@shadow);
+	}
+}
+ 
+.devise {
+	margin-top:20px;
+	.makeColumn(7, 4);
+	.well;
+	h2 {
+		margin-left: 150px;
+		margin-bottom: 15px;
+		font-size: 20px;
+		font-weight:normal;
+		color: @grayDark;
+	}
+	form {
+		div {
+			margin-bottom: @baseLineHeight;
+			a {
+				margin:0;
+				&:after { content:'\0000a0'; }
+				&:before { content:none; }
+			}
+		}
+		br, i {
+			display:none;
+		}
+		input {
+			margin-left: 20px;
+		}
+		/* Oh, dear... */
+		label[for=user_remember_me] {
+			padding:0;
+			position:relative;
+			left:130px;
+		}
+		input[type=submit] {
+			margin-left:150px;
+			.btn;
+			.btn-primary;
+		}
+	}
+	a, h3, p{
+		margin-left:150px;
+	}
+	p {
+		a {
+			margin:0;
+			&:before { content:none; }
+		}
+	}
+	a:before, p:before {
+		content:'\002022\0000a0';
+	}
+	#error_explanation {
+		.alert-error;
+		.alert;
+		margin-left:150px;
+		
+		text-shadow:none;
+		h2 {
+			font-size:13px;
+			line-height:18px;
+			font-weight:bold;
+			margin:0 0 6px 0;
+		}
+		h2, li {
+			color:white;
+		}
+		a {
+			.close
+		}
+	}
+}
