@@ -10,11 +10,11 @@ gem 'mysql2'
 #gem 'libv8', '~> 3.11.8.3', :platform => :ruby
 gem 'haml'
 # Stuff commented out in production
-gem 'therubyracer', :platforms => :ruby
-gem 'twitter-bootstrap-rails'
-gem 'less'
-gem 'less-rails-bootstrap'
-gem 'uglifier'
+#gem 'therubyracer', :platforms => :ruby
+#gem 'twitter-bootstrap-rails'
+#gem 'less'
+#gem 'less-rails-bootstrap'
+#gem 'uglifier'
 # end stuff commented out in production
 
 gem 'jquery-rails'
