@@ -160,12 +160,15 @@ class MenusController < ApplicationController
   end
 
   def shorten(url)
+    print "Shortening ", url
     Bitly.use_api_version_3
     b = Bitly.new(Qrcode::Application.config.bitly_username, Qrcode::Application.config.bitly_api_key)
     begin
       output = b.shorten(url)
       return output.short_url
-    rescue
+    rescue => e
+      puts e.message
+      puts e.backtrace.inspect
       return url
     end
   end
