@@ -15,10 +15,12 @@ glyphicons-halflings.png: glyphicons-halflings-a78317f9e46b730da69ddb49b3396e09.
 glyphicons-halflings/index.png: glyphicons-halflings-a78317f9e46b730da69ddb49b3396e09.png
 rails.png: rails-c56de9bb7349d978bd39c84496f20af4.png
 rails/index.png: rails-c56de9bb7349d978bd39c84496f20af4.png
-application.js: application-ee6b02d94508e73211f580ebeb6b5d8a.js
-application/index.js: application-ee6b02d94508e73211f580ebeb6b5d8a.js
-application.css: application-96f1de54d1c26c4fc46746c3bc5752e8.css
-application/index.css: application-96f1de54d1c26c4fc46746c3bc5752e8.css
+application.js: application-fbd3fb01b565c98df7aee5969bc21f1e.js
+application/index.js: application-fbd3fb01b565c98df7aee5969bc21f1e.js
+jquery.mobile.min.js: jquery.mobile.min-43971f3a46aa1e46d18051962bff6d3e.js
+jquery/index.mobile.min.js: jquery.mobile.min-43971f3a46aa1e46d18051962bff6d3e.js
+application.css: application-8ac054779fc210131c00027e981ce38a.css
+application/index.css: application-8ac054779fc210131c00027e981ce38a.css
 images/ajax-loader.png: images/ajax-loader-1e377da56f83ec6fb71dd338257967ec.png
 images/ajax-loader/index.png: images/ajax-loader-1e377da56f83ec6fb71dd338257967ec.png
 images/icons-18-black.png: images/icons-18-black-d98d993f1bdeea57eff14f0921df67d5.png
@@ -55,6 +57,8 @@ images/ui-icons_888888_256x240.png: images/ui-icons_888888_256x240-33c75a17058f3
 images/ui-icons_888888_256x240/index.png: images/ui-icons_888888_256x240-33c75a17058f31abf8f7a2e44429c227.png
 images/ui-icons_cd0a0a_256x240.png: images/ui-icons_cd0a0a_256x240-d75a5f23560749d548f4e067fb063205.png
 images/ui-icons_cd0a0a_256x240/index.png: images/ui-icons_cd0a0a_256x240-d75a5f23560749d548f4e067fb063205.png
+jquery.mobile.min.css: jquery.mobile.min-4db48d9ef30fdc3702afedbc97486b14.css
+jquery/index.mobile.min.css: jquery.mobile.min-4db48d9ef30fdc3702afedbc97486b14.css
 mobile.css: mobile-4ff2f44d012b0ce9182b4d92abc62fe7.css
 mobile/index.css: mobile-4ff2f44d012b0ce9182b4d92abc62fe7.css
 twitter/bootstrap/glyphicons-halflings-white.png: twitter/bootstrap/glyphicons-halflings-white-d720617007a6a791748dc9a22fbfd9a3.png

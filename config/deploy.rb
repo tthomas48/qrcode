@@ -4,6 +4,7 @@ set :repository,  "https://github.com/tthomas48/qrcode"
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
+set :user, "root"
 set :deploy_to, "/var/www/rails/qrcode"
 server "loadedguntheory.com", :app, :web, :db, :primary => true
 
@@ -16,6 +17,14 @@ set :use_sudo, false
 
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
+
+set :default_environment, {
+  'PATH' => "/usr/local/rvm/gems/ruby-1.9.2-p290/bin:/usr/local/rvm/gems/ruby-1.9.2-p290@global/bin:/usr/local/rvm/rubies/ruby-1.9.2-p290/bin:/usr/share/ruby-rvm/bin:$PATH",
+  'RUBY_VERSION' => 'ruby 1.9.2',
+  'GEM_HOME' => '/usr/local/rvm/gems/ruby-1.9.2-p290',
+  'GEM_PATH' => '/usr/local/rvm/gems/ruby-1.9.2-p290'
+}
+
 
 require "bundler/capistrano"
 before "deploy:assets:precompile", "bundle:install"

@@ -91,7 +91,7 @@ GEM
     multi_xml (0.5.3)
     multipart-post (1.1.5)
     mysql2 (0.3.11)
-    oauth2 (0.8.0)
+    oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
       jwt (~> 0.1.4)
