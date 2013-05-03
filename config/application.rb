@@ -43,6 +43,6 @@ module Qrcode
   config.bitly_username = 'foo'
   config.bitly_api_key = 'bar'
   config.assets.compile = true
-  #config.assets.precompile += ['mobile.css', 'jquery.mobile.min.js', 'jquery.mobile.min.css']
+  config.assets.precompile += ['mobile.css', 'jquery.mobile.min.js', 'jquery.mobile.min.css']
   end
 end

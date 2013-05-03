@@ -8,11 +8,10 @@ gem 'rails', '3.2.11'
 gem 'mysql2', '~> 0.3.11'
 
 # Stuff commented out in production
-#gem 'therubyracer', :platforms => :ruby
-#gem 'twitter-bootstrap-rails'
-#gem 'less'
-#gem 'less-rails-bootstrap'
-#gem 'uglifier'
+gem 'therubyracer', :platforms => :ruby
+gem 'twitter-bootstrap-rails'
+gem 'less'
+gem 'less-rails-bootstrap'
 # end stuff commented out in production
 
 gem 'devise', "~> 2.1.2"
