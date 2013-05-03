@@ -39,6 +39,7 @@ namespace :deploy do
   end
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
+    run "ln -nfs /var/www/rails/config/qrcode_production.rb #{release_path}/config/environments/production.rb"
     run "ln -nfs /var/www/rails/config/bitly.rb #{release_path}/config/initializers/bitly.rb"
     run "ln -nfs /var/www/rails/config/survey.rb #{release_path}/config/initializers/survey.rb"
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
